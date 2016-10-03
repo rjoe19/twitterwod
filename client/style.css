@@ -1,6 +1,10 @@
 
 .row::after {
-    content: "";
-    clear: both;
-    display: block;
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.intro {
+  text-align: center;
 }
