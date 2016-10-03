@@ -1,0 +1,21 @@
+{
+  "name": "twitterwod",
+  "version": "1.0.0",
+  "description": "For those crossfitters out there who are doing WODs alone and don't know which one you will choose for that day, well I've my soution for you.  Simply using a jquery button, you fire an ajax query to Twitters API, using query string #wod and it spits out all tweets relevant to that.  Later iterations will filter the tweet json object for specific things (e.g. workouts only etc)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "nodemon": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjoe19/twitterwod.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rjoe19/twitterwod/issues"
+  },
+  "homepage": "https://github.com/rjoe19/twitterwod#readme"
+}
