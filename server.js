@@ -1,6 +1,7 @@
 // require modules
 var express = require('express');
-var twitter = require('twitter');
+var Twitter = require('twitter');
+var dotenv = require('dotenv');
 var app = express // create an instance of express.
 
 
@@ -22,7 +23,16 @@ app.get('/', function (req, res) {
 app.listen(3000)
 
 
-// setup twitter API call:
+//load environmental variables:
+dotenv.load();
+console.log(process.env.TWITTER_API_KEY)
+console.log(process.env.TWITTER_API_SECRET)
+console.log(process.env.TWITTER_ACCESS_TOKEN)
+console.log(process.env.TWITTER_TOKEN_SECRET)
+
+
+
+// setup twitter API client call:
 var client = new Twitter({
   consumer_key: '',
   consumer_secret: '',
@@ -30,9 +40,7 @@ var client = new Twitter({
   access_token_secret: ''
 });
 
-var params = {screen_name: 'nodejs'};
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
-  if (!error) {
-    console.log(tweets);
-  }
-});
+    twitterClient.get('search/tweets', {q: '%23haiku', lang: 'en'}, function(err, tweet, response) {
+  		  if (err) { console.log("Error retriving tweets"); return }
+  		    returnTweets(tweet)
+  });

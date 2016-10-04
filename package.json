@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/rjoe19/twitterwod#readme",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "twitter": "^1.4.0"
   }
 }
