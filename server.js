@@ -58,10 +58,12 @@ var twitterClient = new Twitter({
 // });
 
 
-twitterClient.get('search/tweets', {q:'%23wod', lang: 'en'}, function(error, tweets, response) {
+twitterClient.get('search/tweets', {q:'%23haiku', lang: 'en'}, function(error, tweets, response) {
   if(error) {
-		console.log()
+		console.log('cant get tweets', error);
 	}
+	else {
   console.log('this is a tweet object', tweets);  // The favorites.
   console.log('this is a response object', response);  // Raw response object.
+}
 });
