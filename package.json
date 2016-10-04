@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/rjoe19/twitterwod/issues"
   },
-  "homepage": "https://github.com/rjoe19/twitterwod#readme"
+  "homepage": "https://github.com/rjoe19/twitterwod#readme",
+  "dependencies": {
+    "twitter": "^1.4.0"
+  }
 }

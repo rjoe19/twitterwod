@@ -1,6 +1,8 @@
 // require modules
-var express = require('express')
-var app = express()
+var express = require('express');
+var twitter = require('twitter');
+var app = express // create an instance of express.
+
 
 
 //Add in Middleware
@@ -18,3 +20,19 @@ app.get('/', function (req, res) {
 })
 
 app.listen(3000)
+
+
+// setup twitter API call:
+var client = new Twitter({
+  consumer_key: '',
+  consumer_secret: '',
+  access_token_key: '',
+  access_token_secret: ''
+});
+
+var params = {screen_name: 'nodejs'};
+client.get('statuses/user_timeline', params, function(error, tweets, response) {
+  if (!error) {
+    console.log(tweets);
+  }
+});
