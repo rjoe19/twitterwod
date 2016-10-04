@@ -57,6 +57,7 @@
 <div class="w3-container w3-red w3-center w3-padding-128">
   <h1 class="w3-margin w3-jumbo">CHOOSE YOUR #WOD</h1>
   <button class="w3-btn w3-padding-16 w3-large w3-margin-top">Hit Me!</button>
+  <div class="twitterWOD">Dummmy twitter feed here</div>
 </div>
 
 <!-- First Grid -->
@@ -127,8 +128,9 @@ function myFunction() {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script>
     $(document).ready(function() {
-      $("button").click(function(){
+      $("button").click(function(){  // anonymous function callback...
        $(this).hide();  // when user clicks on button, it will hide
+       // now: refactor so that when user clicks button, we are making an API call to twitter API and bringing back all tweets with #wod then display this in a box
    });
   });
   </script>
