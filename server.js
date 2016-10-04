@@ -47,9 +47,21 @@ var twitterClient = new Twitter({
   	// 	    console.log(returnTweets(tweet));
   	// 	});
 
-		var params = {screen_name: 'nodejs'};
+		// var params = {screen_name: 'nodejs'};
+// twitterClient.get('search/tweets', {q:'%23wod', lang: 'en'}, function(error, tweets, response) {
+// 	if (error) {
+// 		console.log('ERROR RETRIEVING TWEETS', error);
+// 	}
+//   else  {
+//     console.log(tweets, response);
+//   }
+// });
+
+
 twitterClient.get('search/tweets', {q:'%23wod', lang: 'en'}, function(error, tweets, response) {
-  if (!error) {
-    console.log(tweets);
-  }
+  if(error) {
+		console.log()
+	}
+  console.log('this is a tweet object', tweets);  // The favorites.
+  console.log('this is a response object', response);  // Raw response object.
 });
