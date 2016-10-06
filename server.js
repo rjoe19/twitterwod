@@ -2,7 +2,7 @@
 var express = require('express');
 var Twitter = require('twitter');
 var dotenv = require('dotenv');
-var app = express // create an instance of express.
+var app = express(); // create an instance of express.
 
 
 
