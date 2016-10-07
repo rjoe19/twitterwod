@@ -127,27 +127,31 @@ function myFunction() {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script>
     $(document).ready(function() {
+      console.log('document object ready!');
       $("button").click(function(){
+
         var search_term = {  // create object w/ parameter 'wod'
           q: 'wod'
         };
-        console.log(search_term);
+        console.dir(search_term);
         search(search_term); // call search func w/ parameter
-   });
+      });
+      
+    });
 
      function search(search_term) {
        console.log('searching for ');
        console.dir(search_term);
-
-       $.ajax({
-         url: 'https://api.twitter.com/1.1/search/tweets.json' + $.param(search_term),
-         dataType: 'jsonp',
-         success: function(data) {
-           console.dir(data)
-         }
-       });
      }
-   });
+     $.ajax({
+       url: 'https://api.twitter.com/1.1/search/tweets.json' + $.param(search_term),
+       dataType: 'jsonp',
+        success: function(data) {
+         console.dir(data);
+        }
+      });
+
+
   </script>
 </body>
 </html>
