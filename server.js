@@ -20,7 +20,7 @@ var app = express(); // create an instance of express.
 //   res.send('Hello World')
 // })
 //
-// app.listen(3000)
+app.listen(3000)
 
 
 //load environmental variables:
@@ -67,3 +67,20 @@ var twitterClient = new Twitter({
 //   console.log('this is a response object', response);  // Raw response object.
 // }
 // });
+
+var twitterAPI = require('node-twitter-api');
+var twitter = new twitterAPI({
+    consumerKey: 'JuGk3bf4UuKaumehSbnBwkJsf',
+    consumerSecret: 'KlzkW3cVJmRReYBGIsdU9t7hM42Llxu7ZbL3deFTAN8Apq6AtO',
+    callback: 'http://yoururl.tld/something'
+});
+
+
+// get request tokens
+twitter.getRequestToken(function(error, requestToken, requestTokenSecret, results){
+    if (error) {
+        console.log("Error getting OAuth request token : " + error);
+    } else {
+        //store token and tokenSecret somewhere, you'll need them later; redirect user
+    }
+});
