@@ -8,7 +8,7 @@ var app = express(); // create an instance of express.
 
 //Add in Middleware
 //==============================================================================
-// app.use(express.static('client'));
+app.use(express.static('client'));
 
 
 
@@ -25,10 +25,10 @@ app.listen(3000)
 
 //load environmental variables:
 dotenv.load();
-console.log(process.env.TWITTER_API_KEY)
-console.log(process.env.TWITTER_API_SECRET)
-console.log(process.env.TWITTER_ACCESS_TOKEN)
-console.log(process.env.TWITTER_TOKEN_SECRET)
+// console.log(process.env.TWITTER_API_KEY)
+// console.log(process.env.TWITTER_API_SECRET)
+// console.log(process.env.TWITTER_ACCESS_TOKEN)
+// console.log(process.env.TWITTER_TOKEN_SECRET)
 // successfully logs all keys/secrets/tokens from .env file for testing purposes
 
 
@@ -40,11 +40,11 @@ var twitterClient = new Twitter({
 	  access_token_secret: process.env.TWITTER_TOKEN_SECRET
 	})
 
-twitterClient.get('search/tweets', {q:'%23wod', lang: 'en'}, function(error, tweets, response) {
+twitterClient.get('search/tweets', {q:'%23haiku', lang: 'en'}, function(error, tweets, response) {
 	if (error) {
 		console.log('ERROR RETRIEVING TWEETS', error);
 	}
   else  {
-    console.log(tweets, response);
+    console.log(tweets.stringify, response);
   }
 });
