@@ -45,6 +45,7 @@ twitterClient.get('search/tweets', {q:'%23haiku', lang: 'en'}, function(error, t
 		console.log('ERROR RETRIEVING TWEETS', error);
 	}
   else  {
-    console.log(tweets.stringify, response);
+		tweets = JSON.parse(tweets)
+    console.log(tweets, response);
   }
 });
