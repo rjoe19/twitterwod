@@ -56,8 +56,9 @@
 <!-- Header -->
 <div class="w3-container w3-red w3-center w3-padding-128">
   <h1 class="w3-margin w3-jumbo">CHOOSE YOUR #WOD</h1>
-  <button class="w3-btn w3-padding-16 w3-large w3-margin-top">Hit Me!</button>
-  <div class="twitterWOD">Dummmy twitter feed here</div>
+  <!-- <button class="w3-btn w3-padding-16 w3-large w3-margin-top">Hit Me!</button> -->
+  <button onclick="myFunctionhere()">Try it</button>
+  <div id="twitterWOD">Dummmy twitter feed here</div>
 </div>
 
 <!-- First Grid -->
@@ -113,14 +114,18 @@
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
+  function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+      } else {
+          x.className = x.className.replace(" w3-show", "");
+      }
+  }
+
+  tweets = JSON.parse(tweets) // to turn the tweets from json into javascript
+  var tweetDiv = document.getElementById("twitterWOD")
+  tweetDiv.innerHTML = tweets
   </script>
   <script src="js/scripts.js"></script>
   <script src="http://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
